@@ -14,10 +14,9 @@ def dobavit_slovo(slovo_1):  # добавление слова
         count += 1
     lst_1[c].append(slovo_1)
     if count == x / 2:
-        lst_1.append([])
-        lst_1.append([])
-        lst_2.append('')
-        lst_2.append('')
+        for i in range(x)
+            lst_1.append([])
+            lst_2.append('')
         x = len(lst_1)
     print(lst_1)
 
