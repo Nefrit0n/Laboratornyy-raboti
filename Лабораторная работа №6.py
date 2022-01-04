@@ -16,22 +16,7 @@ def dobavit_slovo(slovo_1):  # добавление слова
         count += 1
     lst_1[c].append(slovo_1)
     if count == round(x / 2):
-        lst_3 = []
-        for j in range(x):
-            if lst_1[j] != '':
-                lst_3.extend(lst_1[j])
-        lst_1.clear()
-        lst_2.clear()
-        lst_1 = [[] for _ in range(x * 2)]
-        lst_2 = ['' for _ in range(x * 2)]
-        count = 0
-        x = len(lst_1)
-        for i_1 in range(len(lst_3)):
-            c = hash_function(lst_3[i_1])
-            if lst_2[c] == '':
-                lst_2[c] = c
-                count += 1
-            lst_1[c].append(lst_3[i_1])
+        proverka_maximum()
     print(lst_1)
 
 
@@ -66,7 +51,30 @@ def vivesti_vsu_tabel():  # Выводим всю таблицу
         print(lst_2[i], ':', *lst_1[i])
 
 
-def proverka_minimum():  # Уменьшаем размер
+def proverka_maximum():  # Увелечение размера и рехеширование
+    global lst_1
+    global lst_2
+    global x
+    global count
+    lst_3 = []
+    for j in range(x):
+        if lst_1[j] != '':
+            lst_3.extend(lst_1[j])
+    lst_1.clear()
+    lst_2.clear()
+    lst_1 = [[] for _ in range(x * 2)]
+    lst_2 = ['' for _ in range(x * 2)]
+    count = 0
+    x = len(lst_1)
+    for i_1 in range(len(lst_3)):
+        c = hash_function(lst_3[i_1])
+        if lst_2[c] == '':
+            lst_2[c] = c
+            count += 1
+        lst_1[c].append(lst_3[i_1])
+
+
+def proverka_minimum():  # Уменьшаем размер и рехеширование
     global lst_1
     global lst_2
     global count
