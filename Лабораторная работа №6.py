@@ -20,19 +20,18 @@ def dobavit_slovo(slovo_1):  # добавление слова
         for j in range(x):
             if lst_1[j] != '':
                 lst_3.extend(lst_1[j])
-        print(lst_3)
         lst_1.clear()
         lst_2.clear()
         lst_1 = [[] for i in range(x * 2)]
         lst_2 = ['' for i in range(x * 2)]
         count = 0
+        x = len(lst_1)
         for i_1 in range(len(lst_3)):
             c = hash_function(lst_3[i_1])
             if lst_2[c] == '':
                 lst_2[c] = c
                 count += 1
             lst_1[c].append(lst_3[i_1])
-        x = len(lst_1)
     print(lst_1)
 
 
